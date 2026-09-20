@@ -1,7 +1,7 @@
 ---
 doc_id: seller-warranty-policy
 title: Chính sách bảo hành dành cho người bán
-audience: seller               # buyer | seller | both
+audience: seller
 category: warranty-policy
 language: vi
 source_url: https://example.com/policy/seller-warranty

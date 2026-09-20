@@ -1,0 +1,75 @@
+=== KẾT QUẢ BENCHMARK RETRIEVAL CÁ NHÂN ===
+Sinh viên: Lục Tiến Đạt - 2A202602969
+Nhóm: kingprotein
+Chiến lược sử dụng: RecursiveChunker (chunk_size=500)
+Backend embedding: MockEmbedder (Deterministic test backend)
+===========================================================
+
+Câu hỏi 1: Người mua thanh toán đơn hàng bằng Thẻ tín dụng/ghi nợ thì nhận được tiền hoàn trong bao lâu?
+Metadata filter: None
+Top-3 Chunks truy xuất được:
+  [1] doc_id=return-refund-policy | score=0.3100
+      content: # Chính sách Trả hàng và Hoàn tiền  ## 1. Đối tượng và phạm vi áp dụng  ### 1.1. Đối tượng áp dụng  Chính Sách...
+  [2] doc_id=buyer-return-eligibility | score=0.2894
+      content: - Voucher Shopee Live, Video Voucher, Voucher Người dùng mới Shopee, Voucher Người dùng mới Shopee Pay, Vouche...
+  [3] doc_id=return-refund-policy | score=0.2564
+      content: Shopee sẽ không chịu bất kỳ trách nhiệm nào có liên quan đến hoặc phát sinh từ việc Người Mua không tuân thủ c...
+Câu trả lời chuẩn (Gold Answer): 7–14 ngày làm việc sau khi Shopee chấp nhận hoàn tiền, về đúng tài khoản thẻ đã thanh toán [1].
+-------------------------------------------------------
+Câu hỏi 2: Đối với sản phẩm thực phẩm tươi sống và đông lạnh, thời gian tối đa để người mua gửi yêu cầu Trả hàng/Hoàn tiền là bao lâu?
+Metadata filter: None
+Top-3 Chunks truy xuất được:
+  [1] doc_id=buyer-return-eligibility | score=0.3010
+      content: ### 2.1. Hoàn tiền ngay (không cần trả hàng)  - **Khiếu nại trên toàn bộ sản phẩm**   - Mã giảm giá: hoàn mã n...
+  [2] doc_id=return-refund-policy | score=0.2831
+      content: Một số trường hợp Người Mua có nhu cầu trả hàng/hoàn tiền sau thời hạn trên, Shopee sẽ xem xét và có thể hỗ tr...
+  [3] doc_id=seller-return-evidence | score=0.2467
+      content: # Mẹo cung cấp bằng chứng khiếu nại Trả hàng/Hoàn tiền giúp Người bán tăng cơ hội thành công ## A. Tổng quan q...
+Câu trả lời chuẩn (Gold Answer): Trong vòng 24 giờ kể từ lúc đơn hàng được cập nhật trạng thái 'Giao hàng thành công' [1].
+-------------------------------------------------------
+Câu hỏi 3: Người bán có thời hạn bao nhiêu ngày để gửi khiếu nại nếu không đồng ý với quyết định Hoàn tiền ngay của Shopee?
+Metadata filter: {'audience': 'seller'}
+Top-3 Chunks truy xuất được:
+  [1] doc_id=seller-refund-appeal | score=0.2507
+      content: Người bán phải gửi khiếu nại trong vòng **2 ngày kể từ khi Shopee gửi thông báo Hoàn tiền ngay cho Người mua m...
+  [2] doc_id=seller-return-process | score=0.2118
+      content: > **Lưu ý:** Nếu sau thời hạn Trả hàng/Hoàn tiền, Người mua phát sinh yêu cầu liên quan đến sản phẩm đã nhận v...
+  [3] doc_id=seller-return-evidence | score=0.1762
+      content: Khi không đồng ý với lý do Người mua cho rằng sản phẩm là hàng giả hoặc hàng nhái, Người bán phải cung cấp giấ...
+Câu trả lời chuẩn (Gold Answer): Người bán phải gửi khiếu nại trong vòng 2 ngày kể từ khi Shopee gửi thông báo [1].
+-------------------------------------------------------
+Câu hỏi 4: Khi người bán khiếu nại quyết định hoàn tiền ngay không yêu cầu trả hàng của Shopee, loại bằng chứng nào là bắt buộc phải cung cấp?
+Metadata filter: {'audience': 'seller'}
+Top-3 Chunks truy xuất được:
+  [1] doc_id=seller-return-process | score=0.2529
+      content: # Quy trình Trả hàng/Hoàn tiền dành cho Người bán  ## A. Thông tin chung về yêu cầu Trả hàng/Hoàn tiền  ### 1....
+  [2] doc_id=seller-return-process | score=0.1863
+      content: > - Với lý do **“Chưa nhận được hàng”**, Người bán không bị tính phí dịch vụ, phí cố định và phí xử lý giao dị...
+  [3] doc_id=seller-return-evidence | score=0.1804
+      content: - Ngày xuất hóa đơn. - Địa chỉ trên hóa đơn trùng với thông tin của Người bán trên Shopee. - Dấu mộc đỏ đối vớ...
+Câu trả lời chuẩn (Gold Answer): Bắt buộc cung cấp Bằng chứng đóng gói (video ghi lại quá trình đóng gói sản phẩm) [1].
+-------------------------------------------------------
+Câu hỏi 5: Trong các phương thức gửi hàng hoàn trả của Shopee, hình thức nào yêu cầu người mua phải thanh toán trước phí trả hàng?
+Metadata filter: {'audience': 'buyer'}
+Top-3 Chunks truy xuất được:
+  [1] doc_id=buyer-return-process | score=0.2737
+      content: **Đối với sản phẩm có nhãn Shopee Xử Lý:** theo dõi hành trình đơn hàng tại trang Chi tiết Trả hàng/Hoàn tiền ...
+  [2] doc_id=buyer-return-eligibility | score=0.2686
+      content: > **Lưu ý:** > > - Bạn vẫn có thể gửi yêu cầu Trả hàng/Hoàn tiền sau khi đã bấm nút “Đã nhận được hàng” và vẫn...
+  [3] doc_id=buyer-return-shipping | score=0.2617
+      content:   - **Đơn hàng không thuộc Shopee Mall:** Shopee sẽ hoàn lại khoản phí này dưới hình thức hoàn Shopee Xu sau k...
+Câu trả lời chuẩn (Gold Answer): Hình thức 'Tự sắp xếp' yêu cầu Người mua thanh toán trước, sau đó Shopee sẽ hỗ trợ hoàn lại [1].
+-------------------------------------------------------
+
+=== KẾT QUẢ A/B TEST: SO SÁNH CÓ VÀ KHÔNG CÓ METADATA FILTER ===
+Câu hỏi test A/B: Người bán có thời hạn bao nhiêu ngày để gửi khiếu nại nếu không đồng ý với quyết định Hoàn tiền ngay của Shopee?
+
+LẦN 1: KHÔNG DÙNG METADATA FILTER
+  Top-1: return-refund-policy (audience=both) | score=0.2940
+  Top-2: return-refund-policy (audience=both) | score=0.2773
+  Top-3: return-refund-policy (audience=both) | score=0.2682
+
+LẦN 2: CÓ DÙNG METADATA_FILTER={'audience': 'seller'}
+  Top-1: seller-refund-appeal (audience=seller) | score=0.2507
+  Top-2: seller-return-process (audience=seller) | score=0.2118
+  Top-3: seller-return-evidence (audience=seller) | score=0.1762
